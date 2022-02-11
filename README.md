@@ -82,13 +82,13 @@ Post-MVP:
 
 ## Wireframes
 ---
-[Desktop Design][https://drive.google.com/file/d/1xSB7zbE1CGH7gCdIMH7S-4wLphNn5phx/view?usp=sharing]
+[Desktop Design](https://drive.google.com/file/d/1xSB7zbE1CGH7gCdIMH7S-4wLphNn5phx/view?usp=sharing)
 
-[Mobile+Tablet Design][https://drive.google.com/file/d/1XWoaJbQTYwd5RBcV-_pmSj2_px_hCJ00/view?usp=sharing]
+[Mobile+Tablet Design](https://drive.google.com/file/d/1XWoaJbQTYwd5RBcV-_pmSj2_px_hCJ00/view?usp=sharing)
 
 ## Flowchart
 ---
-[Flowchart][https://drive.google.com/file/d/1GY7qwdqRC-5ghePtW3-Eb5QIdclGBUWC/view?usp=sharing]
+[Flowchart](https://drive.google.com/file/d/1GY7qwdqRC-5ghePtW3-Eb5QIdclGBUWC/view?usp=sharing)
 
 ## Components
 ---
