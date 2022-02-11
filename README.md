@@ -24,7 +24,8 @@ Post-MVP:
 
 ## API info
 ---
-[xivapi.com][https://xivapi.com/docs]
+[xivapi.com](https://xivapi.com/docs)
+[below example](https://xivapi.com/character/210852)
 ```
 {
 "Achievements": null,
