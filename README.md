@@ -1,70 +1,165 @@
-# Getting Started with Create React App
+# PROJECT 2 OVERVIEW
+---
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Project Schedule
+---
+| Day | Deliverable | Status |
+|:---:|:-----------:|:------:|
+|  F  | Project Worksheet| Incomplete |
+|  M  | Core Layout/structure and functionality | Incomplete |
+|  T  |     MVP     |  Incomplete |
+|  W  |  MVP + Bug fixes | Incomplete |
+|  R  |  Post MVP   |  Incomplete |
+|  F  |  Presentation | Incomplete | 
 
-## Available Scripts
+## Project Description
+---
+MVP:
+This project is a "who's who" of available jobs for my Final Fantasy XIV guild. This will allow us to see who is able to play what role e.g. Tank, Healer, or DPS, and assign them thusly. It should dynamically pull this information up and adjust as players level different jobs in the game. You will be able to assign players to specific roles based on availability.
 
-In the project directory, you can run:
+Post-MVP:
+1 - extend functionality to limit by expansion pack
+2 - The above methodology will be applied to crafting and gathering classes.
+3 - extend functionality by adding a guild search so that anyone can use this.
 
-### `npm start`
+## API info
+---
+[xivapi.com][https://xivapi.com/docs]
+```
+{
+"Achievements": null,
+"AchievementsPublic": null,
+"Character": {
+"ActiveClassJob": {
+"ClassID": 29,
+"ExpLevel": 2551628,
+"ExpLevelMax": 5992000,
+"ExpLevelTogo": 3440372,
+"IsSpecialised": false,
+"JobID": 30,
+"Level": 80,
+"Name": "rogue / ninja",
+"UnlockedState": {
+"ID": 30,
+"Name": "Ninja"
+}
+},
+"Avatar": "https://img2.finalfantasyxiv.com/f/0746e050314de952e2e134408401f80f_7a573cbc0cda3a3dfc1795cb3d9f7b23fc0_96x96.jpg?1644604677",
+"Bio": "-",
+"ClassJobs": [],
+"ClassJobsBozjan": {},
+"ClassJobsElemental": {},
+"DC": "Crystal",
+"FreeCompanyId": "9236179148295113228",
+"FreeCompanyName": "Lex Talionis",
+"GearSet": {},
+"Gender": 2,
+"GrandCompany": {},
+"GuardianDeity": 6,
+"ID": 210852,
+"Lang": null,
+"Name": "Zebix Rune",
+"Nameday": "13th Sun of the 4th Umbral Moon",
+"ParseDate": 1644605107,
+"Portrait": "https://img2.finalfantasyxiv.com/f/0746e050314de952e2e134408401f80f_7a573cbc0cda3a3dfc1795cb3d9f7b23fl0_640x873.jpg?1644604677",
+"PvPTeamId": null,
+"Race": 1,
+"Server": "Balmung",
+"Title": 475,
+"TitleTop": false,
+"Town": 3,
+"Tribe": 1
+},
+"FreeCompany": null,
+"FreeCompanyMembers": null,
+"Friends": null,
+"FriendsPublic": null,
+"Minions": null,
+"Mounts": null,
+"PvPTeam": null
+}
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Wireframes
+---
+[Desktop Design][https://drive.google.com/file/d/1xSB7zbE1CGH7gCdIMH7S-4wLphNn5phx/view?usp=sharing]
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+[Mobile+Tablet Design][https://drive.google.com/file/d/1XWoaJbQTYwd5RBcV-_pmSj2_px_hCJ00/view?usp=sharing]
 
-### `npm test`
+## Flowchart
+---
+[Flowchart][https://drive.google.com/file/d/1GY7qwdqRC-5ghePtW3-Eb5QIdclGBUWC/view?usp=sharing]
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Components
+---
 
-### `npm run build`
+##### MVP
+---
+* Build array of guild members
+    * Each element has 2 values: ID and Name
+    * We only have 20 active members so it's short
+* Get Routing to work
+    * Create dummy display for all elements and get routing to work
+* Get array to map and be clickable
+* Get individual character information to display
+    * incl. the name of all jobs at level 90
+    * display jobs based on roles (tank, healer, or DPS)
+* Get individual character info to display on same page as array
+* Get the 3 add to roster buttons working
+    * in Mobile this is clicking the name of the job
+    * on desktop this is clicking the icon of the job
+* Get roster to display
+    * Should display the character name added on the top half (max of 8)
+    * In mobile thsi will display 'job - name' under the defined role
+    * On desktop this will display as 'name' on top half and as 'icon - name' under defined role
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+##### MVP
+---
+| Component | Priority | Estimated Time | Actual Time |
+|:---------:|:--------:|:--------------:|:-----------:|
+| Component shell | H  |     .5 hour    |      ?      |
+| Array Creation |  H  |     1 hour     |      ?      |
+| Header    |    M     |     .5 hour    |      ?      |
+| Footer    |    L     |     .5 hour    |      ?      |
+| Routing   |    H     |     .5 hour    |      ?      |
+| info display | H     |     1 hour     |      ?      |
+|  character info display | H | 1 hour  |      ?      |
+| info passing and state management | H | 4 hours | ? |
+| Roster display | H   |     1 hour     |      ?      |
+| Reactivity |    H    |     2 hours    |      ?      |
+| Display adjustments | M |  3 hours    |      ?      |
+|    CSS     |   M     |     3 hours    |      ?      |
+|    Total   |         |    18 hrs      |      ?      |
+ 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+##### PostMVP
+---
+* Add functionality to choose the level of content you are searching for 
+    * e.g. all classes level 50 and above, etc
+* Extend search functionality to crafting and gathering classes
+    * add additional pages that display this information
+        * Crafting page -> restrict based on crafters / gatherers
+* Extend guild functionality to make this searchable by guild instead of hardcoding it to just my own
 
-### `npm run eject`
+##### PostMVP
+---
+| Component | Priority | Estimated Time | Actual Time |
+|:---------:|:--------:|:--------------:|:-----------:|
+| limit display based on level of content | L | 2 hours | ? |
+| add crafting and gathering components/pages | L |  1 hour | ? |
+|display crafting and gathering jobs| L  |  1 hour  |  ?  |
+| Limiting display based on crafter chosen | L | 1.5 hrs | ?  |
+| make this extend to any guild | very low |  5 hours |  ?  |
+|    Total  |          |    10.5 hrs     |     ?      |
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Additional Libraries
+---
+```
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Code Snippet
+---
+```
+```
