@@ -5,7 +5,7 @@
 ---
 | Day | Deliverable | Status |
 |:---:|:-----------:|:------:|
-|  F  | Project Worksheet| Incomplete |
+|  F  | Project Worksheet| complete |
 |  M  | Core Layout/structure and functionality | Incomplete |
 |  T  |     MVP     |  Incomplete |
 |  W  |  MVP + Bug fixes | Incomplete |
@@ -119,11 +119,11 @@ Post-MVP:
 ---
 | Component | Priority | Estimated Time | Actual Time |
 |:---------:|:--------:|:--------------:|:-----------:|
-| Component shell | H  |     .5 hour    |      ?      |
+| Component shell | H  |     .5 hour    |      .5     |
 | Array Creation |  H  |     1 hour     |      ?      |
-| Header    |    M     |     .5 hour    |      ?      |
-| Footer    |    L     |     .5 hour    |      ?      |
-| Routing   |    H     |     .5 hour    |      ?      |
+| Header    |    M     |     .5 hour    |      1hr    |
+| Footer    |    L     |     .5 hour    |      .5hr   |
+| Routing   |    H     |     .5 hour    |      .5hr   |
 | info display | H     |     1 hour     |      ?      |
 |  character info display | H | 1 hour  |      ?      |
 | info passing and state management | H | 4 hours | ? |
