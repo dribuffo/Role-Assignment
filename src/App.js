@@ -9,7 +9,7 @@ import guildCrest from './images/crest.png'
 import Guild from './Guild/Guild';
 import Roster from './Roster/Roster';
 import Home from './Home/Home'
-// import Player from './Player/Player'
+
 
 
 //links
@@ -22,7 +22,23 @@ let guildLink = "https://na.finalfantasyxiv.com/lodestone/freecompany/9236179148
 // let playerUrl = "https://xivapi.com/character/" //+character ID
 
 function App() {
-  // const [freeCompanyMembers, setFreeCompanyMembers] = useState([])
+  const [myRaidTeam, setMyRaidTeam] = useState([])
+
+  const handleMyRaidTeam = (name) => {
+    if (myRaidTeam.length < 8) {
+      const addToTeam = [...myRaidTeam]
+      addToTeam.push({name})
+      setMyRaidTeam(addToTeam);
+    } else {
+      alert("Too many players");
+    }
+  };
+
+  const remove = {object} => {
+    const teamCopy = [...myRaidTeam]
+    const filteredTeam = teamCopy.filter((name) => name !== object)
+    setMyRaidTeam(filteredTeam)
+  }
 
   // useEffect(() => { 
   //   fetch(guildUrl, {mode: 'cors'})
@@ -31,11 +47,6 @@ function App() {
   //   .catch(() => console.log("oops, it failed"))
   // }, []);
 
-  // let roster = freeCompanyMembers.map((character, index) => {
-  //     return (
-
-  //     )
-  // });
 
   return (
     <div className="App">
