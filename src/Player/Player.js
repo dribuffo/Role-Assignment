@@ -24,7 +24,9 @@ const Player = ({toggle, handleMyRaidTeam}) => {
   }, [toggle]);
 
     /*
-      switch(player?.Character?.ActiveClassJob?.UnlockedState?.Name) {
+      let activeJob = player?.Character?.ActiveClassJob?.UnlockedState?.Name;
+      let src = " ";
+      switch(activeJob) {
         case: "Paladin":
           let pld = 
           src= {pld}
@@ -92,6 +94,22 @@ const Player = ({toggle, handleMyRaidTeam}) => {
         case: "Summoner":
           let smn = 
           src= {smn}
+          break;
+        case: "Blue Mage":
+          let blu = 
+          src= {blu}
+          break;
+        case: "Botanist":
+          let btn = 
+          src= {btn}
+          break;
+        case: "Fisher":
+          let fsh = 
+          src= {fsh}
+          break;
+        case: "Miner":
+          let min = 
+          src= {min}
           break;
         case: "Blue Mage":
           let blu = 

@@ -2,7 +2,7 @@
 import './Roster.css'
 //components
 
-const Roster = (myRaidTeam, remove) => {
+const Roster = ({myRaidTeam, remove}) => {
   let roster = myRaidTeam.map((player, index) => {
     return (
       <div key={index}>
