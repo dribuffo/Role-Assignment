@@ -2,6 +2,40 @@
 import { useParams } from 'react-router';
 import { useEffect, useState } from 'react';
 
+//images
+import pld from '../images/FFXIVIcons/01_TANK/Job/Paladin.png';
+import war from '../images/FFXIVIcons/01_TANK/Job/Warrior.png';
+import drk from '../images/FFXIVIcons/01_TANK/Job/DarkKnight.png';
+import gnb from '../images/FFXIVIcons/01_TANK/Job/Gunbreaker.png';
+import ast from '../images/FFXIVIcons/02_HEALER/Job/Astrologian.png';
+import sch from '../images/FFXIVIcons/02_HEALER/Job/Scholar.png';
+import whm from '../images/FFXIVIcons/02_HEALER/Job/WhiteMage.png';
+import sge from '../images/FFXIVIcons/02_HEALER/Job/sage.png';
+import brd from '../images/FFXIVIcons/03_DPS/Job/Bard.png';
+import blm from '../images/FFXIVIcons/03_DPS/Job/BlackMage.png';
+import dnc from '../images/FFXIVIcons/03_DPS/Job/Dancer.png';
+import drg from '../images/FFXIVIcons/03_DPS/Job/Dragoon.png';
+import mch from '../images/FFXIVIcons/03_DPS/Job/Machinist.png';
+import mnk from '../images/FFXIVIcons/03_DPS/Job/Monk.png';
+import nin from '../images/FFXIVIcons/03_DPS/Job/Ninja.png';
+import rdm from '../images/FFXIVIcons/03_DPS/Job/RedMage.png';
+import sam from '../images/FFXIVIcons/03_DPS/Job/Samurai.png';
+import smn from '../images/FFXIVIcons/03_DPS/Job/Summoner.png';
+import rpr from '../images/FFXIVIcons/03_DPS/Job/Reaper.png';
+import blu from '../images/FFXIVIcons/06_LIMITED/BlueMage.png';
+import btn from '../images/FFXIVIcons/05_GATHERER/Botanist.png';
+import fsh from '../images/FFXIVIcons/05_GATHERER/Fisher.png';
+import min from '../images/FFXIVIcons/05_GATHERER/Miner.png';
+import alc from '../images/FFXIVIcons/04_CRAFTER/Alchemist.png';
+import arm from '../images/FFXIVIcons/04_CRAFTER/Armorer.png';
+import bsm from '../images/FFXIVIcons/04_CRAFTER/Blacksmith.png';
+import crp from '../images/FFXIVIcons/04_CRAFTER/Carpenter.png';
+import cul from '../images/FFXIVIcons/04_CRAFTER/Culinarian.png';
+import gsm from '../images/FFXIVIcons/04_CRAFTER/Goldsmith.png';
+import ltw from '../images/FFXIVIcons/04_CRAFTER/Leatherworker.png';
+import wvr from '../images/FFXIVIcons/04_CRAFTER/Weaver.png';
+import none from '../images/FFXIVIcons/00_ROLE/TankRole.png'
+
 //components
 
 //Api Info
@@ -23,106 +57,111 @@ const Player = ({toggle, handleMyRaidTeam}) => {
       .catch(() => console.log("oops, it failed"))
   }, [toggle]);
 
-    /*
       let activeJob = player?.Character?.ActiveClassJob?.UnlockedState?.Name;
-      let src = " ";
+      let icon = '';
       switch(activeJob) {
-        case: "Paladin":
-          let pld = 
-          src= {pld}
+        case "Paladin":
+          icon= pld
           break;
-        case: "Warrior":
-          let war = 
-          src= {war}
+        case "Warrior":
+          icon= war
           break;
-        case: "Dark Knight":
-          let drk = 
-          src= {drk}
+        case "Dark Knight":
+          icon= drk
           break;
-        case: "Gunbreaker":
-          let gnb = 
-          src= {gnb}
+        case "Gunbreaker":
+          icon= gnb
           break;
-        case: "Astrologian":
-          let ast = 
-          src= {ast}
+        case "Astrologian":
+          icon= ast
           break;
-        case: "Scholar":
-          let sch = 
-          src= {sch}
+        case "Scholar":
+          icon= sch
           break;
-        case: "White Mage":
-          let whm = 
-          src= {whm}
+        case "White Mage":
+          icon= whm
           break;
-        case: "Bard":
-          let brd = 
-          src= {brd}
+        case "Sage":
+          icon= sge
           break;
-        case: "Black Mage":
-          let blm = 
-          src= {blm}
+        case "Bard":
+          icon= brd
           break;
-        case: "Dancer":
-          let dnc = 
-          src= {dnc}
+        case "Black Mage":
+          icon= blm
           break;
-        case: "Dragoon":
-          let drg = 
-          src= {drg}
+        case "Dancer":
+          icon= dnc
           break;
-        case: "Machinist":
-          let mch = 
-          src= {mch}
+        case "Dragoon":
+          icon= drg
           break;
-        case: "Monk":
-          let mnk = 
-          src= {mnk}
+        case "Machinist":
+          icon= mch
           break;
-        case: "Ninja":
-          let nin = 
-          src= {nin}
+        case "Monk":
+          icon= mnk
           break;
-        case: "Red Mage":
-          let rdm = 
-          src= {rdm}
+        case "Ninja":
+          icon= nin
           break;
-        case: "Samurai":
-          let sam = 
-          src= {sam}
+        case "Red Mage":
+          icon= rdm
           break;
-        case: "Summoner":
-          let smn = 
-          src= {smn}
+        case "Samurai":
+          icon= sam
           break;
-        case: "Blue Mage":
-          let blu = 
-          src= {blu}
+        case "Summoner":
+          icon= smn
           break;
-        case: "Botanist":
-          let btn = 
-          src= {btn}
+        case "Reaper":
+          icon= rpr
           break;
-        case: "Fisher":
-          let fsh = 
-          src= {fsh}
+        case "Blue Mage":
+          icon= blu
           break;
-        case: "Miner":
-          let min = 
-          src= {min}
+        case "Botanist":
+          icon= btn
           break;
-        case: "Blue Mage":
-          let blu = 
-          src= {blu}
+        case "Fisher":
+          icon= fsh
+          break;
+        case "Miner":
+          icon= min
+          break;
+        case "Alchemist":
+          icon= alc
+          break;
+        case "Armorer":
+          icon= arm
+          break;
+        case "Blacksmith":
+          icon= bsm
+          break;
+        case "Carpenter":
+          icon= crp
+          break;
+        case "Culinarian":
+          icon= cul
+          break;
+        case "Goldsmith":
+          icon= gsm
+          break;
+        case "Leatherworker":
+          icon= ltw
+          break;
+        case "Weaver":
+          icon= wvr
+          break;
+        default:
+          icon= none
           break;
       }
-    */
-
 
     return (
       <div>
         {/*Output Name */}
-        <h4> {player?.Character?.Name} <img/></h4>
+        <h4> {player?.Character?.Name}</h4> <img src={icon} alt="job icon"/>
         <button onClick={() => handleMyRaidTeam(player?.Character?.Name)}>Add to Raid Team</button>
       </div>
     );
