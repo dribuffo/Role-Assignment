@@ -16,10 +16,6 @@ import Home from './Home/Home'
 let guildLink = "https://na.finalfantasyxiv.com/lodestone/freecompany/9236179148295113228/"
 
 
-//Api Info
-// // let url = "https://xivapi.com/freecompany/search?name=Lex+Talionis&sever=Balmung";
-// let guildUrl = "https://xivapi.com/freecompany/9236179148295113228?data=FCM"
-// let playerUrl = "https://xivapi.com/character/" //+character ID
 
 function App() {
   const [myRaidTeam, setMyRaidTeam] = useState([]);
@@ -40,18 +36,10 @@ function App() {
     setMyRaidTeam(filteredTeam)
   }
 
-  // useEffect(() => { 
-  //   fetch(guildUrl, {mode: 'cors'})
-  //   .then(response => response.json())
-  //   .then(data => console.log(data))
-  //   .catch(() => console.log("oops, it failed"))
-  // }, []);
-
-
   return (
     <div className="App">
       <nav>
-        <Link to='/Guild'> <h2>Members</h2> </Link>
+        <Link to='/Guild/:id'> <h2>Members</h2> </Link>
         <Link to='/Roster'> <h2>Roster</h2> </Link>
       </nav>
       <main>

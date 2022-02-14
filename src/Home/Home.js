@@ -9,7 +9,7 @@ let logo = "https://static.wikia.nocookie.net/finalfantasy/images/b/b3/FFXIV_log
 function Home() {
     return (
       <div className="homepage">
-         <Link to='/Guild'> <img className="crest" src={guildCrest} alt="guild crest"/> </Link>
+         <Link to='/Guild/:id'> <img className="crest" src={guildCrest} alt="guild crest"/> </Link>
         <h3>Click above to Enter! </h3>
         <p></p>
         <h1>Welcome to my job picker app for my Final Fantasy 14 guild!</h1>
