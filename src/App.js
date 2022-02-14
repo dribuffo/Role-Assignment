@@ -22,7 +22,7 @@ let guildLink = "https://na.finalfantasyxiv.com/lodestone/freecompany/9236179148
 // let playerUrl = "https://xivapi.com/character/" //+character ID
 
 function App() {
-  const [myRaidTeam, setMyRaidTeam] = useState([])
+  const [myRaidTeam, setMyRaidTeam] = useState([]);
 
   const handleMyRaidTeam = (name) => {
     if (myRaidTeam.length < 8) {
@@ -30,11 +30,11 @@ function App() {
       addToTeam.push({name})
       setMyRaidTeam(addToTeam);
     } else {
-      alert("Too many players");
+      alert("Too many players")
     }
   };
 
-  const remove = {object} => {
+  const remove = (object) => {
     const teamCopy = [...myRaidTeam]
     const filteredTeam = teamCopy.filter((name) => name !== object)
     setMyRaidTeam(filteredTeam)
@@ -57,8 +57,8 @@ function App() {
       <main>
         <Routes>
           <Route path='/' element={<Home />} />,
-          <Route path='/Guild' element={<Guild />} />,
-          <Route path='/Roster' element={<Roster />} />,
+          <Route path='/Guild/:id' element={<Guild handleMyRaidTeam={handleMyRaidTeam}/>} />,
+          <Route path='/Roster' element={<Roster myRaidTeam={myRaidTeam} remove={remove}/>} />,
         </Routes>
       </main>
       <footer>
