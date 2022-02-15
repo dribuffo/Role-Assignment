@@ -120,14 +120,14 @@ Post-MVP:
 | Component | Priority | Estimated Time | Actual Time |
 |:---------:|:--------:|:--------------:|:-----------:|
 | Component shell | H  |     .5 hour    |      .5     |
-| Array Creation |  H  |     1 hour     |      ?      |
+| Array Creation |  H  |     1 hour     |      .5      |
 | Header    |    M     |     .5 hour    |      1hr    |
 | Footer    |    L     |     .5 hour    |      .5hr   |
 | Routing   |    H     |     .5 hour    |      .5hr   |
-| info display | H     |     1 hour     |      ?      |
-|  character info display | H | 1 hour  |      ?      |
-| info passing and state management | H | 4 hours | ? |
-| Roster display | H   |     1 hour     |      ?      |
+| info display | H     |     1 hour     |      1hr      |
+|  character info display | H | 1 hour  |      1hr      |
+| info passing and state management | H | 4 hours | 3hrs |
+| Roster display | H   |     1 hour     |      1.5hr      |
 | Reactivity |    H    |     2 hours    |      ?      |
 | Display adjustments | M |  3 hours    |      ?      |
 |    CSS     |   M     |     3 hours    |      ?      |

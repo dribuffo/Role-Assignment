@@ -1,6 +1,7 @@
 //dependencies
 import { useParams } from 'react-router';
 import { useEffect, useState } from 'react';
+import './Player.css';
 
 //images
 import pld from '../images/FFXIVIcons/01_TANK/Job/Paladin.png';
@@ -10,7 +11,7 @@ import gnb from '../images/FFXIVIcons/01_TANK/Job/Gunbreaker.png';
 import ast from '../images/FFXIVIcons/02_HEALER/Job/Astrologian.png';
 import sch from '../images/FFXIVIcons/02_HEALER/Job/Scholar.png';
 import whm from '../images/FFXIVIcons/02_HEALER/Job/WhiteMage.png';
-import sge from '../images/FFXIVIcons/02_HEALER/Job/sage.png';
+import sge from '../images/FFXIVIcons/02_HEALER/Job/Sage.png';
 import brd from '../images/FFXIVIcons/03_DPS/Job/Bard.png';
 import blm from '../images/FFXIVIcons/03_DPS/Job/BlackMage.png';
 import dnc from '../images/FFXIVIcons/03_DPS/Job/Dancer.png';
@@ -57,6 +58,7 @@ const Player = ({toggle, handleMyRaidTeam}) => {
       .catch(() => console.log("oops, it failed"))
   }, [toggle]);
 
+  // displays the players active/most recent active job under their name:
       let activeJob = player?.Character?.ActiveClassJob?.UnlockedState?.Name;
       let icon = '';
       switch(activeJob) {
@@ -157,12 +159,24 @@ const Player = ({toggle, handleMyRaidTeam}) => {
           icon= none
           break;
       }
+  
+  // generate the players lvl 90 jobs and then pass that into the display.
+    console.log(player)
+    let leveledJobs = [];
+    for(let i = 0; i < player?.Character?.ClassJobs?.length; i++) {
+      if (player?.Character?.ClassJobs[i]?.Level == 90) {
+        leveledJobs.push(player?.Character?.ClassJobs[i]?.UnlockedState?.Name)
+      } 
+    };
+    console.log(leveledJobs)
+
 
     return (
       <div>
         {/*Output Name */}
-        <h4> {player?.Character?.Name}</h4> <img src={icon} alt="job icon"/>
-        <button onClick={() => handleMyRaidTeam(player?.Character?.Name)}>Add to Raid Team</button>
+        <h4> {player?.Character?.Name}</h4> 
+        <img src={icon} alt="job icon" onClick={() => handleMyRaidTeam(player?.Character?.Name)}/>
+        <button className="add_button" onClick={() => handleMyRaidTeam(player?.Character?.Name)}>Add to Raid Roster</button>
       </div>
     );
   };

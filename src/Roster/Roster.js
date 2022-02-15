@@ -3,6 +3,7 @@ import './Roster.css'
 //components
 
 const Roster = ({myRaidTeam, remove}) => {
+
   let roster = myRaidTeam.map((player, index) => {
     return (
       <div key={index}>
@@ -11,7 +12,6 @@ const Roster = ({myRaidTeam, remove}) => {
       </div>
     )
   });
-  console.log(myRaidTeam)
 
   return (
     <>
