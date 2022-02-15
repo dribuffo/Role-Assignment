@@ -1,6 +1,6 @@
 //dependencies
 import './Roster.css'
-import { useState } from 'react-router-dom'
+import { useState } from 'react'
 //components
 
 //images
@@ -37,35 +37,36 @@ const Roster = ({myRaidTeam, remove}) => {
     }
   };
 
+  // generate the players lvl 90 jobs and add them to an array
+  console.log(player)
+  let leveledJobs = [];
+  function findJobs(player) {
+    for(let i = 0; i < player?.Character?.ClassJobs?.length; i++) {
+      if (player?.Character?.ClassJobs[i]?.Level === 90) {
+        leveledJobs.push(player?.Character?.ClassJobs[i]?.UnlockedState?.Name)
+      } 
+    };
+    return leveledJobs;
+  }
+  let characterJobs = findJobs(player);
 
 
-  console.log(myRaidTeam)
-  console.log(myRaidTeam[0]?.name?.Character?.Name)
-
-
-//   // generate the players lvl 90 jobs and add them to an array
-//   console.log(player)
-//   let leveledJobs = [];
-//   for(let i = 0; i < player?.Character?.ClassJobs?.length; i++) {
-//     if (player?.Character?.ClassJobs[i]?.Level === 90) {
-//       leveledJobs.push(player?.Character?.ClassJobs[i]?.UnlockedState?.Name)
-//     } 
-//   };
-
-// //remove level 90 crafters and gatherers
-//   function checkJob(job) {
-//     if( job === 'Scholar' || job === 'Samurai') {
-//         return false
-//     } else {
-//       return true
-//     }
-//   }
-//   let filteredJobs = leveledJobs.filter(checkJob)
+  //remove level 90 crafters and gatherers
+    function checkJob(job) {
+      if( job === 'Sage' || job === 'Samurai') {
+          return false
+      } else {
+        return true
+      }
+    }
+    let filteredJobs = characterJobs.filter(checkJob)
 
 
   let roster = myRaidTeam.map((player, index) => {
     return (
       <>
+        <p>Name: {player?.name?.Character?.Name} </p>
+        <p>{filteredJobs}</p>
         <img className="tank_icon" src={tank_icon} alt="job icon" onClick={() => handleSetTanks(player)}/>
         <img className="healer_icon" src={healer_icon} alt="job icon" onClick={() => handleSetHealers(player)}/>
         <img className="dps_icon" src={dps_icon} alt="job icon" onClick={() => handleSetDps(player)}/>
@@ -77,15 +78,13 @@ const Roster = ({myRaidTeam, remove}) => {
   return (
     <>
       <h2>Roster</h2>
-      {/* {roster} */}
+      {roster}
       <h2>Tanks</h2>
       {tanks}
       <h2>Healers</h2>
       {healers}
       <h2>DPS</h2>
       {dps}
-      
-
     </>
   );
 };

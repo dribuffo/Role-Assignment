@@ -1,5 +1,5 @@
 //depenedencies
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Routes, Link, Route} from 'react-router-dom';
 import './App.css';
 import guildCrest from './images/crest.png'
@@ -9,13 +9,6 @@ import guildCrest from './images/crest.png'
 import Guild from './Guild/Guild';
 import Roster from './Roster/Roster';
 import Home from './Home/Home'
-
-
-
-//links
-let guildLink = "https://na.finalfantasyxiv.com/lodestone/freecompany/9236179148295113228/"
-
-
 
 function App() {
   const [myRaidTeam, setMyRaidTeam] = useState([]);
