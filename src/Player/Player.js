@@ -160,22 +160,34 @@ const Player = ({toggle, handleMyRaidTeam}) => {
           break;
       }
   
-  // generate the players lvl 90 jobs and then pass that into the display.
+  // generate the players lvl 90 jobs and add them to an array
     console.log(player)
     let leveledJobs = [];
     for(let i = 0; i < player?.Character?.ClassJobs?.length; i++) {
-      if (player?.Character?.ClassJobs[i]?.Level == 90) {
+      if (player?.Character?.ClassJobs[i]?.Level === 90) {
         leveledJobs.push(player?.Character?.ClassJobs[i]?.UnlockedState?.Name)
       } 
     };
+
+  //remove level 90 crafters and gatherers
     console.log(leveledJobs)
 
+    function checkJob(job) {
+      if( job === 'Scholar' || job === 'Samurai') {
+          return false
+      } else {
+        return true
+      }
+    }
+    let filteredJobs = leveledJobs.filter(checkJob)
+
+    console.log("Post cut: " + filteredJobs)
 
     return (
       <div>
         {/*Output Name */}
         <h4> {player?.Character?.Name}</h4> 
-        <img src={icon} alt="job icon" onClick={() => handleMyRaidTeam(player?.Character?.Name)}/>
+        <img src={icon} alt="job icon" onClick={() => handleMyRaidTeam(player)}/>
         <button className="add_button" onClick={() => handleMyRaidTeam(player?.Character?.Name)}>Add to Raid Roster</button>
       </div>
     );
