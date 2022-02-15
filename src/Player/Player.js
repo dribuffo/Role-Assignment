@@ -165,7 +165,7 @@ const Player = ({toggle, handleMyRaidTeam}) => {
         {/*Output Name */}
         <h4> {player?.Character?.Name}</h4> 
         <img src={icon} alt="job icon" onClick={() => handleMyRaidTeam(player)}/>
-        <button className="add_button" onClick={() => handleMyRaidTeam(player?.Character?.Name)}>Add to Raid Roster</button>
+        <button className="add_button" onClick={() => handleMyRaidTeam(player)}>Add to Raid Roster</button>
       </div>
     );
   };
