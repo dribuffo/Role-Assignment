@@ -18,7 +18,12 @@ const Roster = ({myRaidTeam, handleSetTanks, tanks, handleSetHealers, healers, h
         leveledJobs.push(player.name.Character.ClassJobs[i].UnlockedState.Name + " ")
       }
     }
-    return leveledJobs
+    
+    let availableTanks = leveledJobs.filter(checkTank)
+    let availableHealer = leveledJobs.filter(checkHealer)
+    let availableDps = leveledJobs.filter(checkDps)
+
+    return availableTanks, availableHealer, availableDps
   }
 
   //filter leveledJobs by tank 
@@ -62,9 +67,7 @@ const Roster = ({myRaidTeam, handleSetTanks, tanks, handleSetHealers, healers, h
 
   }
 
-  // let availableTanks = findJobs(person).filter(checkTank)
-  // let availableHealer = findJobs(person).filter(checkHealer)
-  // let availableDps = findJobs(person).filter(checkDps)
+
 
   let roster = myRaidTeam.map((player, index) => {
     return (
@@ -83,7 +86,7 @@ const Roster = ({myRaidTeam, handleSetTanks, tanks, handleSetHealers, healers, h
     return (
       <>
       <p key={index}>{player?.name?.Character?.Name}</p>
-      <p>{player.availableTanks}</p>
+      <p>{availableTanks}</p>
       </>
     )
   });
@@ -92,7 +95,7 @@ const Roster = ({myRaidTeam, handleSetTanks, tanks, handleSetHealers, healers, h
     return (
       <>
         <p key={index}>{player?.name?.Character?.Name}</p>
-        <p>{player.availableHealer}</p>
+        <p>{availableHealer}</p>
       </>
     )
   });
@@ -100,7 +103,7 @@ const Roster = ({myRaidTeam, handleSetTanks, tanks, handleSetHealers, healers, h
     return (
       <>
         <p key={index}>{player?.name?.Character?.Name}</p>
-        <p>{player.availableDps}</p>
+        <p>{availableDps}</p>
       </>
     )
   });
