@@ -9,44 +9,49 @@ import dps_icon from '../images/FFXIVIcons/00_ROLE/DPSRole.png'
 
 const Roster = ({myRaidTeam, handleSetTanks, tanks, handleSetHealers, healers, handleSetDps, dps, clearAll, remove}) => {
 
-  function findTanks(player){
-    
+   //find level 90 jobs
+  function findJobs(player){
+    let leveledJobs = [];
+    for(let i = 0; i < arr_len; i++) {
+      if (player.name.Character.ClassJobs[i].Level === 90) {
+        leveledJobs.push(player.name.Character.ClassJobs[i].UnlockedState.Name)
+      }
+    }
+    return leveledJobs
+  }
+
+  //filter leveledJobs by tank 
+  function checkTank(job) {
+    if( job === 'Paladin' || job === 'Gunbreaker' || job === 'Warrior' || job === 'Dark Knight') {
+      console.log ('found a tank job!')  
+      return true
+    } else {
+      return false
+    }
+  }
+
+  //filter leveledJobs by Healer
+  function checkHealer(job) {
+    if( job === 'White Mage' || job === 'Scholar' || job === 'Astrologian' || job === 'Sage') {
+      console.log ('found a healer job!')  
+      return true
+    } else {
+      return false
+    }
+  }
+
+  //filter leveledJobs by Healer
+  function checkHealer(job) {
+    if( job === 'White Mage' || job === 'Scholar' || job === 'Astrologian' || job === 'Sage') {
+      console.log ('found a healer job!')  
+      return true
+    } else {
+      return false
+    }
   }
 
 
-  // generate the players lvl 90 jobs and add them to an array
-  // console.log(player)
-  // let leveledJobs = [];
-  // function findJobs(player) {
-  //   for(let i = 0; i < player?.Character?.ClassJobs?.length; i++) {
-  //     if (player?.Character?.ClassJobs[i]?.Level === 90) {
-  //       leveledJobs.push(player?.Character?.ClassJobs[i]?.UnlockedState?.Name)
-  //     } 
-  //   };
-  //   return leveledJobs;
-  // }
-  // let characterJobs = findJobs(player);
-
-
-  //remove level 90 crafters and gatherers
-    // function checkJob(job) {
-    //   if( job === 'Sage' || job === 'Samurai') {
-    //       return false
-    //   } else {
-    //     return true
-    //   }
-    // }
-    // let filteredJobs = characterJobs.filter(checkJob)
-
-  // let filteredRaidTeam = myRaidTeam.filter(player => {
-  //   // only players with level 90 or above join raid team
-  //     if (player?.Character?.ClassJobs[i]?.Level === 90) {
-  //       return true
-  //     } else {
-  //       return false
-  //     }
-  // }});
-
+  let availableTanks = leveledJobs.filter(checkTank)
 
   let roster = myRaidTeam.map((player, index) => {
     return (
@@ -63,7 +68,10 @@ const Roster = ({myRaidTeam, handleSetTanks, tanks, handleSetHealers, healers, h
   
   let thoseWhoTank = tanks.map((player, index) => {
     return (
+      <>
       <p key={index}>{player?.name?.Character?.Name}</p>
+      {/* <p>{findTanks(player)}</p> */}
+      </>
     )
   });
 
