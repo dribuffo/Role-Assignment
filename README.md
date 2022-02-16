@@ -6,8 +6,8 @@
 | Day | Deliverable | Status |
 |:---:|:-----------:|:------:|
 |  F  | Project Worksheet| complete |
-|  M  | Core Layout/structure and functionality | Incomplete |
-|  T  |     MVP     |  Incomplete |
+|  M  | Core Layout/structure and functionality | complete |
+|  T  |     MVP     |  complete |
 |  W  |  MVP + Bug fixes | Incomplete |
 |  R  |  Post MVP   |  Incomplete |
 |  F  |  Presentation | Incomplete | 
@@ -126,7 +126,7 @@ Post-MVP:
 | Routing   |    H     |     .5 hour    |      .5hr   |
 | info display | H     |     1 hour     |      1hr      |
 |  character info display | H | 1 hour  |      1hr      |
-| info passing and state management | H | 4 hours | 3hrs |
+| info passing and state management | H | 4 hours | 6hrs |
 | Roster display | H   |     1 hour     |      1.5hr      |
 | Reactivity |    H    |     2 hours    |      ?      |
 | Display adjustments | M |  3 hours    |      ?      |

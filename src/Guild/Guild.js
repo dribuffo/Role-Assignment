@@ -10,7 +10,7 @@ import Player from '../Player/Player'
 const Guild = ({handleMyRaidTeam}) => {
   const [toggle, setToggle] = useState(false)
 
-  let roster = guildData.map((character, index) => {
+  let guildMembers = guildData.map((character, index) => {
     return (
       <div className="guildList" key={index}>
         <p>
@@ -23,7 +23,7 @@ const Guild = ({handleMyRaidTeam}) => {
     return (
       <div>
         {<Player toggle={toggle} handleMyRaidTeam={handleMyRaidTeam}/>}
-        {roster}
+        {guildMembers}
       </div>
     );
   };

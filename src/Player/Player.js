@@ -35,8 +35,7 @@ import cul from '../images/FFXIVIcons/04_CRAFTER/Culinarian.png';
 import gsm from '../images/FFXIVIcons/04_CRAFTER/Goldsmith.png';
 import ltw from '../images/FFXIVIcons/04_CRAFTER/Leatherworker.png';
 import wvr from '../images/FFXIVIcons/04_CRAFTER/Weaver.png';
-import none from '../images/FFXIVIcons/00_ROLE/TankRole.png'
-
+import none from '../images/fate.png'
 //components
 
 //Api Info
@@ -45,13 +44,12 @@ import none from '../images/FFXIVIcons/00_ROLE/TankRole.png'
 let playerUrl = "https://xivapi.com/character/" //+character ID //returns individual character info
 
 const Player = ({toggle, handleMyRaidTeam}) => {
-    let params = useParams();
-    let playerID = params.id
-
+  let params = useParams();
     const [player, setPlayer] = useState([]);
 
   // useEffect to call once on toggle, not an infinite loop
   useEffect(() => { 
+    let playerID = params.id
       fetch(playerUrl + `${playerID}`, {mode: 'cors'})
       .then(response => response.json())
       .then(data => setPlayer(data))

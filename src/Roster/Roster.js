@@ -13,8 +13,6 @@ const Roster = ({myRaidTeam, remove}) => {
   const [healers, setHealers] = useState([])
   const [dps, setDps] = useState([])
 
-  console.log(myRaidTeam)
-
   const handleSetTanks = (player) => {
     if (tanks.length < 2) {
       const tanksCopy = [...tanks]
@@ -69,16 +67,30 @@ const Roster = ({myRaidTeam, remove}) => {
     // }
     // let filteredJobs = characterJobs.filter(checkJob)
 
+  // let filteredRaidTeam = myRaidTeam.filter(player => {
+  //   // only players with level 90 or above join raid team
+  //     if (player?.Character?.ClassJobs[i]?.Level === 90) {
+  //       return true
+  //     } else {
+  //       return false
+  //     }
+  // }});
+
+    function clearAll() {
+      setTanks([]);
+      setHealers([]);
+      setDps([]);
+    }
 
   let roster = myRaidTeam.map((player, index) => {
     return (
       <>
         <p key={index}>Name: {player?.name?.Character?.Name} </p>
-        {/* <p>{filteredJobs}</p> */}
+        <p> Jobs: {player?.Character?.ClassJobs} </p>
         <img className="tank_icon" src={tank_icon} alt="job icon" onClick={() => handleSetTanks(player)}/>
         <img className="healer_icon" src={healer_icon} alt="job icon" onClick={() => handleSetHealers(player)}/>
         <img className="dps_icon" src={dps_icon} alt="job icon" onClick={() => handleSetDps(player)}/>
-        <button className="remove_button" onClick={() => remove(player)}>Assigned</button>
+        <button className="remove_button" onClick={() => remove(player)}>Assigned</button> <button className="remove_button" onClick={() => remove(player)}>Remove Player</button>
       </>
     )
   });
@@ -100,8 +112,6 @@ const Roster = ({myRaidTeam, remove}) => {
     )
   });
 
-  
-
   return (
     <>
       <h2>Roster</h2>
@@ -112,7 +122,7 @@ const Roster = ({myRaidTeam, remove}) => {
       {thoseWhoHeal}
       <h2>DPS</h2>
       {thoseWhoDPS}
-      {/* <button className="wipe_team">Remove all assignments.</button> */}
+      <button className="wipe_team" onClick={() => clearAll()}>Remove all assignments.</button>
     </>
   );
 };
