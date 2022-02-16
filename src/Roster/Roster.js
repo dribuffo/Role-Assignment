@@ -58,9 +58,13 @@ const Roster = ({myRaidTeam, handleSetTanks, tanks, handleSetHealers, healers, h
 
   const [person, setPerson] = useState({})
 
-  let availableTanks = findJobs(player).filter(checkTank)
-  let availableHealer = findJobs(player).filter(checkHealer)
-  let availableDps = findJobs(player).filter(checkDps)
+  const handleSetPerson = () => {
+
+  }
+
+  // let availableTanks = findJobs(person).filter(checkTank)
+  // let availableHealer = findJobs(person).filter(checkHealer)
+  // let availableDps = findJobs(person).filter(checkDps)
 
   let roster = myRaidTeam.map((player, index) => {
     return (
