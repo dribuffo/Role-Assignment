@@ -1,6 +1,5 @@
 //dependencies
 import './Roster.css'
-import { useState } from 'react'
 //components
 
 //images
@@ -8,40 +7,12 @@ import tank_icon from '../images/FFXIVIcons/00_ROLE/TankRole.png'
 import healer_icon from '../images/FFXIVIcons/00_ROLE/HealerRole.png'
 import dps_icon from '../images/FFXIVIcons/00_ROLE/DPSRole.png'
 
-const Roster = ({myRaidTeam, remove}) => {
-  const [tanks, setTanks] = useState([])
-  const [healers, setHealers] = useState([])
-  const [dps, setDps] = useState([])
+const Roster = ({myRaidTeam, handleSetTanks, tanks, handleSetHealers, healers, handleSetDps, dps, clearAll, remove}) => {
 
-  const handleSetTanks = (player) => {
-    if (tanks.length < 2) {
-      const tanksCopy = [...tanks]
-      tanksCopy.push(player)
-      setTanks(tanksCopy);
-    } else {
-      alert("Too many tanks")
-    }
-  };
+  function findTanks(player){
+    
+  }
 
-  const handleSetHealers = (player) => {
-    if (healers.length < 2) {
-      const healersCopy = [...healers]
-      healersCopy.push(player)
-      setHealers(healersCopy);
-    } else {
-      alert("Too many healers")
-    }
-  };
-
-  const handleSetDps = (player) => {
-    if (dps.length < 4) {
-      const dpsCopy = [...dps]
-      dpsCopy.push(player)
-      setDps(dpsCopy);
-    } else {
-      alert("Too many dps")
-    }
-  };
 
   // generate the players lvl 90 jobs and add them to an array
   // console.log(player)
@@ -76,11 +47,6 @@ const Roster = ({myRaidTeam, remove}) => {
   //     }
   // }});
 
-    function clearAll() {
-      setTanks([]);
-      setHealers([]);
-      setDps([]);
-    }
 
   let roster = myRaidTeam.map((player, index) => {
     return (

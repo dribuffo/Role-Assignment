@@ -12,6 +12,9 @@ import Home from './Home/Home'
 
 function App() {
   const [myRaidTeam, setMyRaidTeam] = useState([]);
+  const [tanks, setTanks] = useState([])
+  const [healers, setHealers] = useState([])
+  const [dps, setDps] = useState([])
 
   const handleMyRaidTeam = (name) => {
     if (myRaidTeam.length < 8) {
@@ -22,6 +25,42 @@ function App() {
       alert("Too many players")
     }
   };
+
+  const handleSetTanks = (player) => {
+    if (tanks.length < 2) {
+      const tanksCopy = [...tanks]
+      tanksCopy.push(player)
+      setTanks(tanksCopy);
+    } else {
+      alert("Too many tanks")
+    }
+  };
+
+  const handleSetHealers = (player) => {
+    if (healers.length < 2) {
+      const healersCopy = [...healers]
+      healersCopy.push(player)
+      setHealers(healersCopy);
+    } else {
+      alert("Too many healers")
+    }
+  };
+
+  const handleSetDps = (player) => {
+    if (dps.length < 4) {
+      const dpsCopy = [...dps]
+      dpsCopy.push(player)
+      setDps(dpsCopy);
+    } else {
+      alert("Too many dps")
+    }
+  };
+
+  function clearAll() {
+    setTanks([]);
+    setHealers([]);
+    setDps([]);
+  }
 
   const remove = (object) => {
     const teamCopy = [...myRaidTeam]
@@ -39,7 +78,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />} />,
           <Route path='/Guild/:id' element={<Guild handleMyRaidTeam={handleMyRaidTeam}/>} />,
-          <Route path='/Roster' element={<Roster myRaidTeam={myRaidTeam} remove={remove}/>} />,
+          <Route path='/Roster' element={<Roster myRaidTeam={myRaidTeam} handleSetTanks={handleSetTanks} tanks={tanks} handleSetHealers={handleSetHealers} healers={healers} handleSetDps={handleSetDps} dps={dps} clearAll={clearAll} remove={remove}/>} />,
         </Routes>
       </main>
       <footer>
