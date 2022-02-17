@@ -22,8 +22,8 @@ const Guild = ({handleMyRaidTeam, handleSetPerson}) => {
   });
 
     return (
-      <div>
-        {<Player toggle={toggle} handleMyRaidTeam={handleMyRaidTeam} handleSetPerson={handleSetPerson}/>}
+      <div className="mainBody"> 
+        <section className="mainCharacter">{<Player toggle={toggle} handleMyRaidTeam={handleMyRaidTeam} handleSetPerson={handleSetPerson}/>}</section>
         {guildMembers}
         <Footer />
       </div>

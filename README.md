@@ -164,3 +164,7 @@ Post-MVP:
 ---
 ```
 ```
+
+## Credited code blocks
+---
+I used the pokedex project to setup the frame for everything for this project, they were very similiar in nature so rather than start from nothing I started from something we did in class.

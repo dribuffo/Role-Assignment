@@ -1,11 +1,19 @@
+/*
+            MOBILE STYLING
+*/
 img {
     display: block;
     margin-left: auto;
     margin-right: auto;
 }
 
+h1 {
+    text-align: center;
+}
+
 h3 {
     text-align: center;
+    padding-bottom: 30px;
 }
 
 .logo {
@@ -15,10 +23,11 @@ h3 {
 }
 
 .crest {
+    padding-top: 10px;
     height: 50%;
     width: 50%;
 }
 
 .homepage {
-    background-color: lightslategrey;
+    background-color: lightsteelblue;
 }

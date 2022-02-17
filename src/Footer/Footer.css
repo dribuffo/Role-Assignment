@@ -6,10 +6,10 @@ footer {
     background-color: lightblue;
     display: flex;
     justify-content: space-between;
-    visibility: visible;
+    font-size: 15px;
   }
   
-  i-footer {
+.i-foot {
     height: 60px;
     width: auto;
-  }
+}

@@ -11,10 +11,9 @@ function Home() {
       <div className="homepage">
          <Link to='/Guild/:id'> <img className="crest" src={guildCrest} alt="guild crest"/> </Link>
         <h3>Click above to Enter! </h3>
-        <p></p>
         <h1>Welcome to my job picker app for my Final Fantasy 14 guild!</h1>
-        <h3>Click the below image to learn about the free trial!</h3>
         <a href={freeTrial}> <img className="logo" src={logo} alt="final fantasy xiv logo"/> </a>
+        <h3>Click the above image to learn about the free trial!</h3>
       </div>
     );
 }

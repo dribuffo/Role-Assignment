@@ -117,22 +117,30 @@ const Roster = ({myRaidTeam, person, handleSetTanks, tanks, handleSetHealers, he
   });
 
   return (
-    <>
+    <section className="section">
+      <div className="rosterBlock">
       {/* Displaying the whole roster */}
-      <h2>Roster</h2>
+      <h2 className="h2">Roster</h2>
       {roster}
+      </div>
+      <div className="tankBlock">
       {/* Displaying the players who are assigned as tanks */}
-      <h2>Tanks</h2>
+      <h2 className="h2"> Tanks</h2>
       {thoseWhoTank}
+      </div>
+      <div className="healerBlock">
       {/* Displaying the players who are assigned as healers */}
-      <h2>Healers</h2>
+      <h2 className="h2">Healers</h2>
       {thoseWhoHeal}
+      </div>
+      <div className="dpsBlock">
       {/* Displaying the who are assigned as DPS */}
-      <h2>DPS</h2>
+      <h2 className="h2">DPS</h2>
       {thoseWhoDPS}
+      </div>
       <button className="wipe_team" onClick={() => clearAll()}>Remove all assignments.</button>
       <Footer />
-    </>
+    </section>
   );
 };
 
