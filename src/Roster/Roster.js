@@ -1,6 +1,7 @@
 //dependencies
 import './Roster.css'
 //components
+import Footer from '../Footer/Footer'
 
 //images
 import tank_icon from '../images/FFXIVIcons/00_ROLE/TankRole.png'
@@ -74,8 +75,8 @@ const Roster = ({myRaidTeam, person, handleSetTanks, tanks, handleSetHealers, he
   //myRaidTeam mapping function
   let roster = myRaidTeam.map((player, index) => {
     return (
-      <div className="roster_display">
-        <p key={index} className="display_name">Name: {player?.name?.Character?.Name} </p>
+      <div className="roster_display" key={index}>
+        <p className="display_name">Name: {player?.name?.Character?.Name} </p>
         <p className="display_jobs"> Jobs: {findJobs(player)} </p>
         <img className="tank_icon" src={tank_icon} alt="job icon" onClick={() => handleSetTanks(player)}/>
         <img className="healer_icon" src={healer_icon} alt="job icon" onClick={() => handleSetHealers(player)}/>
@@ -130,6 +131,7 @@ const Roster = ({myRaidTeam, person, handleSetTanks, tanks, handleSetHealers, he
       <h2>DPS</h2>
       {thoseWhoDPS}
       <button className="wipe_team" onClick={() => clearAll()}>Remove all assignments.</button>
+      <Footer />
     </>
   );
 };

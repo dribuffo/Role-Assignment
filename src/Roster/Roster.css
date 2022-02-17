@@ -1,12 +1,6 @@
 /*
             MOBILE SETTINGS
 */
-footer {
-    visibility: visible;
-    justify-content: space-between;
-}
-
-
 .tank_names{
     color: blue;
 }
@@ -24,10 +18,12 @@ footer {
 }
 
 .display_name{
+    display: grid;
     grid-column: 1 span 4;
     grid-row: 1;
 }
 .display_jobs {
+    display: grid;
     grid-column: 1 span 4;
     grid-row: 2;
 }

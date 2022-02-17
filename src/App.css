@@ -10,19 +10,3 @@ background: gray;
 a:link {
     text-decoration: none;
 }
-
-footer {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  height: 60px;
-  background-color: lightblue;
-  display: flex;
-  justify-content: space-between;
-  visibility: visible;
-}
-
-i-footer {
-  height: 60px;
-  width: auto;
-}

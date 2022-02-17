@@ -2,13 +2,14 @@
 import React, { useState } from 'react';
 import { Routes, Link, Route} from 'react-router-dom';
 import './App.css';
-import guildCrest from './images/crest.png'
+
 
 
 //components
 import Guild from './Guild/Guild';
 import Roster from './Roster/Roster';
-import Home from './Home/Home'
+import Home from './Home/Home';
+
 
 function App() {
   const [myRaidTeam, setMyRaidTeam] = useState([]);
@@ -86,11 +87,7 @@ function App() {
           <Route path='/Roster' element={<Roster myRaidTeam={myRaidTeam} person={person} handleSetTanks={handleSetTanks} tanks={tanks} handleSetHealers={handleSetHealers} healers={healers} handleSetDps={handleSetDps} dps={dps} clearAll={clearAll} remove={remove}/>} />,
         </Routes>
       </main>
-      <footer>
-        <img className="i-foot" src={guildCrest} alt="guild crest" />
-        <p>Created by Zebix Rune of Balmung</p>
-        <img className="i-foot" src="https://p7.hiclipart.com/preview/733/367/623/final-fantasy-xiv-stormblood-final-fantasy-xv-final-fantasy-xiv-heavensward-world-of-warcraft-final-fantasy-thumbnail.jpg" alt="meteor symbol" />
-      </footer>
+
     </div>
   );
 }

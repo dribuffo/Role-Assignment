@@ -6,6 +6,7 @@ import { useState } from 'react'
 
 //components
 import Player from '../Player/Player'
+import Footer from '../Footer/Footer'
 
 const Guild = ({handleMyRaidTeam, handleSetPerson}) => {
   const [toggle, setToggle] = useState(false)
@@ -24,6 +25,7 @@ const Guild = ({handleMyRaidTeam, handleSetPerson}) => {
       <div>
         {<Player toggle={toggle} handleMyRaidTeam={handleMyRaidTeam} handleSetPerson={handleSetPerson}/>}
         {guildMembers}
+        <Footer />
       </div>
     );
   };
