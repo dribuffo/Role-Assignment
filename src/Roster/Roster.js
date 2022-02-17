@@ -110,19 +110,20 @@ const Roster = ({myRaidTeam, person, handleSetTanks, tanks, handleSetHealers, he
   let thoseWhoDPS = dps.map((player, index) => {
     return (
       <>
-        <p className="dps_names" key={index}>{player?.name?.Character?.Name}:</p>
+        <p className="dps_names" key={index}>{player?.name?.Character?.Name}</p>
         {/* <p>{availableDPS}</p> */}
       </>
     )
   });
 
   return (
-    <section className="section">
+    <>
       <div className="rosterBlock">
       {/* Displaying the whole roster */}
       <h2 className="h2">Roster</h2>
       {roster}
       </div>
+    <section className="section">
       <div className="tankBlock">
       {/* Displaying the players who are assigned as tanks */}
       <h2 className="h2"> Tanks</h2>
@@ -141,6 +142,7 @@ const Roster = ({myRaidTeam, person, handleSetTanks, tanks, handleSetHealers, he
       <button className="wipe_team" onClick={() => clearAll()}>Remove all assignments.</button>
       <Footer />
     </section>
+    </>
   );
 };
 

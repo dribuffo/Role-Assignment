@@ -1,6 +1,10 @@
 /*
             MOBILE STYLING
 */
+body {
+    background-color: lightsteelblue;
+}
+
 img {
     display: block;
     margin-left: auto;
@@ -28,6 +32,72 @@ h3 {
     width: 50%;
 }
 
-.homepage {
-    background-color: lightsteelblue;
+.trailers{
+    display:none;
+}
+
+.trailersText {
+    visibility: hidden;
+}
+
+/*---------------------------------------------------------------------------------------*/
+/*
+                TABLET VIEW
+*/
+@media only screen and (min-width: 768px) {
+    .logo {
+        height: 50%;
+        width: 50%;
+        padding-left: 30px;
+    }
+    
+    .crest {
+        padding-top: 10px;
+        height: 25%;
+        width: 25%;
+    }
+
+    .trailersText{
+        visibility: visible;
+    }
+    
+    .trailers{
+        display: grid;
+        grid-template-columns:  2fr  2fr ;
+        grid-template-rows: 150px 150px 150px;
+    }
+
+    #arr{
+        grid-column: 1;
+        grid-row: 1;
+    }
+    #hw {
+        grid-column: 2;
+        grid-row: 1;
+    }
+    #sb {
+        grid-column: 1;
+        grid-row: 2;
+    }
+    #shb{
+        grid-column: 2;
+        grid-row: 2;
+    }
+    #ew {
+        justify-self: center;
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row: 3;
+    }
+    .trailerLogo{
+        height: 100%;
+        width: auto;
+    }
+}
+
+/*---------------------------------------------------------------------------------------*/
+/*
+                DESKTOP VIEW
+*/
+@media only screen and (min-width: 1024px) {
 }

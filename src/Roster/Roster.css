@@ -2,11 +2,6 @@
             MOBILE STYLING
 */
 
-.section{
-    padding-top: 1px;
-    background-color: darkslategrey;
-    padding-bottom: 100px;
-}
 .tank_names{
     text-align: center;
     color: darkblue;
@@ -26,18 +21,16 @@
 
 .roster_display {
     display: grid;
-    grid-template-columns: repeat(1fr, 3);
-    grid-template-rows: repeat 4(1fr, 4);
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 30px 1fr 50px 50px;
 }
 
 .display_name{
-    display: grid;
-    grid-column: 1 span 4;
+    grid-column: 1 / 4;
     grid-row: 1;
 }
-.display_jobs {
-    display: grid;
-    grid-column: 1 span 4;
+.display_jobs {    
+    grid-column: 1 / 4;
     grid-row: 2;
 }
 
@@ -80,4 +73,84 @@
 .dpsBlock {
     background-color: lightcoral;
     border-radius: 25px;
+}
+
+/*---------------------------------------------------------------------------------------*/
+/*
+                TABLET VIEW
+*/
+@media only screen and (min-width: 768px) {
+    .roster_display {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+    }
+    
+    .display_name{
+        font-size: 20px;
+        grid-column: 1 / 4;
+        grid-row: 1;
+    }
+    .display_jobs {    
+        font-size: 18px;
+        grid-column: 1 / 4;
+        grid-row: 2;
+    }
+    
+    .tank_icon{
+        height: 100px;
+        width: auto;
+        grid-column: 1;
+        grid-row: 3;
+    } 
+    .healer_icon{
+        height: 100px;
+        width: auto;
+        grid-column: 2;
+        grid-row: 3;
+    
+    } 
+    .dps_icon {
+        height: 100px;
+        width: auto;
+        grid-column: 3;
+        grid-row: 3;
+    }
+    
+    .assign_button {
+        grid-column: 2;
+        grid-row: 1;
+        border-radius: 25px;
+        margin: 10px;
+    }
+    
+    .remove_button {
+        grid-column: 3;
+        grid-row: 1;
+        border-radius: 25px;
+        margin: 10px;
+    }
+
+    .section {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 50px;
+    }
+
+    .dpsBlock, .tankBlock, .healerBlock {
+        font-size: 20px;
+        margin: 10px;
+    }
+
+    .wipe_team {
+        grid-column: 1 / 4;
+        grid-row: 2;
+    }
+}
+
+/*---------------------------------------------------------------------------------------*/
+/*
+                DESKTOP VIEW
+*/
+@media only screen and (min-width: 1024px) {
 }
