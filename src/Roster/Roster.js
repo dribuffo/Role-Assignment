@@ -74,17 +74,18 @@ const Roster = ({myRaidTeam, person, handleSetTanks, tanks, handleSetHealers, he
   //myRaidTeam mapping function
   let roster = myRaidTeam.map((player, index) => {
     return (
-      <>
-        <p key={index}>Name: {player?.name?.Character?.Name} </p>
-        <p> Jobs: {findJobs(player)} </p>
+      <div className="roster_display">
+        <p key={index} className="display_name">Name: {player?.name?.Character?.Name} </p>
+        <p className="display_jobs"> Jobs: {findJobs(player)} </p>
         <img className="tank_icon" src={tank_icon} alt="job icon" onClick={() => handleSetTanks(player)}/>
         <img className="healer_icon" src={healer_icon} alt="job icon" onClick={() => handleSetHealers(player)}/>
         <img className="dps_icon" src={dps_icon} alt="job icon" onClick={() => handleSetDps(player)}/>
-        <button className="remove_button" onClick={() => remove(player)}>Assigned</button> <button className="remove_button" onClick={() => remove(player)}>Remove Player</button>
-      </>
+        <button className="assign_button" onClick={() => remove(player)}>Assigned</button> <button className="remove_button" onClick={() => remove(player)}>Remove Player</button>
+      </div>
     )
   });
   
+  // state management for people who are tanks
   let thoseWhoTank = tanks.map((player, index) => {
     return (
       <>
@@ -94,6 +95,7 @@ const Roster = ({myRaidTeam, person, handleSetTanks, tanks, handleSetHealers, he
     )
   });
 
+  // state management for people who are healers
   let thoseWhoHeal = healers.map((player, index) => {
     return (
       <>
@@ -102,6 +104,8 @@ const Roster = ({myRaidTeam, person, handleSetTanks, tanks, handleSetHealers, he
       </>
     )
   });
+
+  // state management for people who are dps
   let thoseWhoDPS = dps.map((player, index) => {
     return (
       <>
@@ -113,12 +117,16 @@ const Roster = ({myRaidTeam, person, handleSetTanks, tanks, handleSetHealers, he
 
   return (
     <>
+      {/* Displaying the whole roster */}
       <h2>Roster</h2>
       {roster}
+      {/* Displaying the players who are assigned as tanks */}
       <h2>Tanks</h2>
       {thoseWhoTank}
+      {/* Displaying the players who are assigned as healers */}
       <h2>Healers</h2>
       {thoseWhoHeal}
+      {/* Displaying the who are assigned as DPS */}
       <h2>DPS</h2>
       {thoseWhoDPS}
       <button className="wipe_team" onClick={() => clearAll()}>Remove all assignments.</button>
