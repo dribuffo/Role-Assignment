@@ -7,7 +7,7 @@ import { useState } from 'react'
 //components
 import Player from '../Player/Player'
 
-const Guild = ({handleMyRaidTeam}) => {
+const Guild = ({handleMyRaidTeam, handleSetPerson}) => {
   const [toggle, setToggle] = useState(false)
 
   let guildMembers = guildData.map((character, index) => {
@@ -22,7 +22,7 @@ const Guild = ({handleMyRaidTeam}) => {
 
     return (
       <div>
-        {<Player toggle={toggle} handleMyRaidTeam={handleMyRaidTeam}/>}
+        {<Player toggle={toggle} handleMyRaidTeam={handleMyRaidTeam} handleSetPerson={handleSetPerson}/>}
         {guildMembers}
       </div>
     );

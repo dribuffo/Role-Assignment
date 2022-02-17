@@ -1,5 +1,4 @@
 //dependencies
-import { useState } from 'react'
 import './Roster.css'
 //components
 
@@ -8,28 +7,23 @@ import tank_icon from '../images/FFXIVIcons/00_ROLE/TankRole.png'
 import healer_icon from '../images/FFXIVIcons/00_ROLE/HealerRole.png'
 import dps_icon from '../images/FFXIVIcons/00_ROLE/DPSRole.png'
 
-const Roster = ({myRaidTeam, handleSetTanks, tanks, handleSetHealers, healers, handleSetDps, dps, clearAll, remove}) => {
-   //find level 90 jobs
-  function findJobs(player){
-    let arr_len = player.name.Character.ClassJobs.length
-    let leveledJobs = [];
+const Roster = ({myRaidTeam, person, handleSetTanks, tanks, handleSetHealers, healers, handleSetDps, dps, clearAll, remove}) => {
+  //find level 90 jobs for the filter and display functions
+  function displayJobs(person){
+    let arr_len = person.Character.ClassJobs.length
+    let availableJobs = [];
     for(let i = 0; i < arr_len; i++) {
-      if (player.name.Character.ClassJobs[i].Level === 90) {
-        leveledJobs.push(player.name.Character.ClassJobs[i].UnlockedState.Name + " ")
+      if (person.Character.ClassJobs[i].Level === 90) {
+        availableJobs.push(person.Character.ClassJobs[i].UnlockedState.Name)
+        availableJobs.push(" ")
       }
     }
-    
-    let availableTanks = leveledJobs.filter(checkTank)
-    let availableHealer = leveledJobs.filter(checkHealer)
-    let availableDps = leveledJobs.filter(checkDps)
-
-    return availableTanks, availableHealer, availableDps
+    return availableJobs
   }
 
   //filter leveledJobs by tank 
   function checkTank(job) {
-    if( job === 'Paladin' || job === 'Gunbreaker' || job === 'Warrior' || job === 'Dark Knight') {
-      console.log ('found a tank job!')  
+    if( job === 'Paladin' || job === 'Gunbreaker' || job === 'Warrior' || job === 'Dark Knight' || job === " ") {
       return true
     } else {
       return false
@@ -38,8 +32,7 @@ const Roster = ({myRaidTeam, handleSetTanks, tanks, handleSetHealers, healers, h
 
   //filter leveledJobs by Healer
   function checkHealer(job) {
-    if( job === 'White Mage' || job === 'Scholar' || job === 'Astrologian' || job === 'Sage') {
-      console.log ('found a healer job!')  
+    if( job === 'White Mage' || job === 'Scholar' || job === 'Astrologian' || job === 'Sage' || job === " ") {
       return true
     } else {
       return false
@@ -53,22 +46,32 @@ const Roster = ({myRaidTeam, handleSetTanks, tanks, handleSetHealers, healers, h
         job === 'Ninja' || job === 'Bard' || 
         job === 'Machinist' || job === 'Dancer' || 
         job === 'Black Mage' || job === 'Summoner' || 
-        job === 'Red Mage' || job === 'Blue Mage') {
-      console.log ('found a dps job!')  
+        job === 'Red Mage' || job === 'Blue Mage' ||
+        job === " ") { 
       return true
     } else {
       return false
     }
   }
 
-  const [person, setPerson] = useState({})
+  //function cluster for filtering jobs based on what is available, to be displayed below:
+  let availableTanks = displayJobs(person).filter(checkTank)
+  let availableHealers = displayJobs(person).filter(checkHealer)
+  let availableDPS = displayJobs(person).filter(checkDps)
 
-  const handleSetPerson = () => {
-
+  //find level 90 jobs for the myRaidTeam.mapping function
+  function findJobs(player){
+  let arr_len = player.name.Character.ClassJobs.length
+  let leveledJobs = [];
+  for(let i = 0; i < arr_len; i++) {
+    if (player.name.Character.ClassJobs[i].Level === 90) {
+      leveledJobs.push(player.name.Character.ClassJobs[i].UnlockedState.Name + ", ")
+    }
+  }
+  return leveledJobs
   }
 
-
-
+  //myRaidTeam mapping function
   let roster = myRaidTeam.map((player, index) => {
     return (
       <>
@@ -85,8 +88,8 @@ const Roster = ({myRaidTeam, handleSetTanks, tanks, handleSetHealers, healers, h
   let thoseWhoTank = tanks.map((player, index) => {
     return (
       <>
-      <p key={index}>{player?.name?.Character?.Name}</p>
-      <p>{availableTanks}</p>
+      <p className="tank_names" key={index}>{player?.name?.Character?.Name}</p>
+      {/* <p>{availableTanks}</p> */}
       </>
     )
   });
@@ -94,16 +97,16 @@ const Roster = ({myRaidTeam, handleSetTanks, tanks, handleSetHealers, healers, h
   let thoseWhoHeal = healers.map((player, index) => {
     return (
       <>
-        <p key={index}>{player?.name?.Character?.Name}</p>
-        <p>{availableHealer}</p>
+        <p className="healer_names" key={index}>{player?.name?.Character?.Name}</p>
+        {/* <p>{availableHealers}</p> */}
       </>
     )
   });
   let thoseWhoDPS = dps.map((player, index) => {
     return (
       <>
-        <p key={index}>{player?.name?.Character?.Name}</p>
-        <p>{availableDps}</p>
+        <p className="dps_names" key={index}>{player?.name?.Character?.Name}:</p>
+        {/* <p>{availableDPS}</p> */}
       </>
     )
   });

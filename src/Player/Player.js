@@ -43,7 +43,7 @@ import none from '../images/fate.png'
 // let guildUrl = "https://xivapi.com/freecompany/9236179148295113228?data=FCM" //display results for guild personnel
 let playerUrl = "https://xivapi.com/character/" //+character ID //returns individual character info
 
-const Player = ({toggle, handleMyRaidTeam}) => {
+const Player = ({toggle, handleMyRaidTeam, handleSetPerson}) => {
   let params = useParams();
     const [player, setPlayer] = useState([]);
 
@@ -158,12 +158,18 @@ const Player = ({toggle, handleMyRaidTeam}) => {
           break;
       }
  
+  // function to set person and player equal to the same object
+  function setData(player) {
+    handleMyRaidTeam(player)
+    handleSetPerson(player)
+  }
+
     return (
       <div>
         {/*Output Name */}
         <h4> {player?.Character?.Name}</h4> 
-        <img src={icon} alt="job icon" onClick={() => handleMyRaidTeam(player)}/>
-        <button className="add_button" onClick={() => handleMyRaidTeam(player)}>Add to Raid Roster</button>
+        <img src={icon} alt="job icon" onClick={() => setData(player)}/>
+        <button className="add_button" onClick={() => setData(player)}>Add to Raid Roster</button>
       </div>
     );
   };

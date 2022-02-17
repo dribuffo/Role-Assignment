@@ -14,7 +14,12 @@ function App() {
   const [myRaidTeam, setMyRaidTeam] = useState([]);
   const [tanks, setTanks] = useState([])
   const [healers, setHealers] = useState([])
-  const [dps, setDps] = useState([])
+  const [dps, setDps] = useState([])  
+  const [person, setPerson] = useState({})
+
+  const handleSetPerson = (player) => {
+    setPerson(player)
+  }
 
   const handleMyRaidTeam = (name) => {
     if (myRaidTeam.length < 8) {
@@ -77,8 +82,8 @@ function App() {
       <main>
         <Routes>
           <Route path='/' element={<Home />} />,
-          <Route path='/Guild/:id' element={<Guild handleMyRaidTeam={handleMyRaidTeam}/>} />,
-          <Route path='/Roster' element={<Roster myRaidTeam={myRaidTeam} handleSetTanks={handleSetTanks} tanks={tanks} handleSetHealers={handleSetHealers} healers={healers} handleSetDps={handleSetDps} dps={dps} clearAll={clearAll} remove={remove}/>} />,
+          <Route path='/Guild/:id' element={<Guild handleMyRaidTeam={handleMyRaidTeam} handleSetPerson={handleSetPerson}/>} />,
+          <Route path='/Roster' element={<Roster myRaidTeam={myRaidTeam} person={person} handleSetTanks={handleSetTanks} tanks={tanks} handleSetHealers={handleSetHealers} healers={healers} handleSetDps={handleSetDps} dps={dps} clearAll={clearAll} remove={remove}/>} />,
         </Routes>
       </main>
       <footer>

@@ -1,4 +1,17 @@
+/*
+            MOBILE SETTINGS
+*/
 footer {
     visibility: visible;
     justify-content: space-between;
+}
+
+.tank_names{
+    color: blue;
+}
+.healer_names{
+    color: green;    
+}
+.dps_names{
+    color: red;
 }
