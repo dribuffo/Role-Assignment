@@ -3,6 +3,7 @@ import React  from "react";
 import { Link } from 'react-router-dom';
 import './Home.css';
 import guildCrest from '../images/crest.png'
+import ReactPlayer from "react-player"
 
 //images
 let freeTrial = "https://freetrial.finalfantasyxiv.com/"
@@ -25,17 +26,25 @@ function Home() {
     return (
       <div className="homepage">
          <Link to='/Guild/:id'> <img className="crest" src={guildCrest} alt="guild crest"/> </Link>
-        <h3>Click above to Enter! </h3>
-        <h1>Welcome to my job picker app for my Final Fantasy 14 guild!</h1>
+        <h3 className="enter">Click above to Enter! </h3>
+        <h1 className="welcome">Welcome to my job picker app for my Final Fantasy 14 guild!</h1>
         <a href={freeTrial}> <img className="logo" src={logo} alt="final fantasy xiv logo"/> </a>
-        <h3>Click the above image to learn about the free trial!</h3>
-        <h3 className="trailersText"> Or click below if you're interested in watching some trailers!</h3>
+        <h3 className="trialText">Click the above image to learn about the free trial!</h3>
+        <h3 className="trailersText"> Or click below if you're interested in watching some trailers for award-winning and critically acclaimed MMORPG Final Fantasy XIV that has a free trial up to level 60 and includes the first expansion 'Heavensward'.</h3>
         <section className="trailers">
           <a href={arr} id="arr"> <img className="trailerLogo" src={arrLogo} alt="final fantasy xiv logo"/> </a>
           <a href={heavensward} id="hw"> <img className="trailerLogo" src={hwLogo} alt="final fantasy xiv logo"/> </a>
           <a href={stormblood} id="sb"><img className="trailerLogo" src={sbLogo} alt="final fantasy xiv logo"/> </a>
           <a href={shadowbringers} id="shb"> <img className="trailerLogo" src={shbLogo} alt="final fantasy xiv logo"/> </a>
           <a href={endwalker} id="ew"> <img className="trailerLogo" src={ewLogo} alt="final fantasy xiv logo"/> </a>
+        </section>
+        <section className="trailerVid">
+          <ReactPlayer className="video" url="https://www.youtube.com/watch?v=h542YbZuwkQ" controls="true"/>
+          <ReactPlayer className="video" url="https://www.youtube.com/watch?v=pAoBojYsuOI" controls="true"/>
+          <ReactPlayer className="video" url="https://www.youtube.com/watch?v=Jt1h1MinlLI" controls="true"/>
+          <ReactPlayer className="video" url="https://www.youtube.com/watch?v=4tyuIh12_HU" controls="true"/>
+          <ReactPlayer className="video" id="ewV" url="https://www.youtube.com/watch?v=zTTtd6bnhFs" controls="true"/>
+
         </section>
       </div>
     );

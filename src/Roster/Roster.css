@@ -153,4 +153,40 @@
                 DESKTOP VIEW
 */
 @media only screen and (min-width: 1024px) {
+    .roster_display {
+        border-style: groove;
+        border-color: black;
+        border-width: 5px;
+        border-radius: 25px;
+    }
+
+    .display_name{
+        font-size: 35px;
+    }
+    .display_jobs {    
+        font-size: 25px;
+    }
+    .remove_button {
+        font-size: 50px;
+    }
+
+    .assign_button {
+        font-size: 50px;
+    }
+
+    .tank_names{
+        font-size: 35px;
+    }
+    .healer_names{
+        font-size: 35px;
+    }
+    .dps_names{
+        font-size: 30px;
+    }
+
+    .wipe_team {
+        font-size: 25px;
+    }
+    
+    
 }

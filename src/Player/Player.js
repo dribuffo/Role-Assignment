@@ -169,7 +169,6 @@ const Player = ({toggle, handleMyRaidTeam, handleSetPerson}) => {
         {/*Output Name */}
         <h4> {player?.Character?.Name}</h4> 
         <img src={icon} alt="job icon" onClick={() => setData(player)}/>
-        <button className="add_button" onClick={() => setData(player)}>Add to Raid Roster</button>
       </div>
     );
   };

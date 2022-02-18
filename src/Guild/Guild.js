@@ -14,9 +14,8 @@ const Guild = ({handleMyRaidTeam, handleSetPerson}) => {
   let guildMembers = guildData.map((character, index) => {
     return (
       <div className="guildList" key={index}>
-        <p>
+          <img className="avatar" src={character.pic}/>
           <Link onClick={() => setToggle(!toggle)} to={'/Guild/'+character.id}>{character.name} </Link>
-        </p>
       </div>
     )
   });
