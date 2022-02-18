@@ -75,13 +75,13 @@ const Roster = ({myRaidTeam, person, handleSetTanks, tanks, handleSetHealers, he
   //myRaidTeam mapping function
   let roster = myRaidTeam.map((player, index) => {
     return (
-      <div className="roster_display" key={index}>
-        <p className="display_name">Name: {player?.name?.Character?.Name} </p>
-        <p className="display_jobs"> Jobs: {findJobs(player)} </p>
-        <img className="tank_icon" src={tank_icon} alt="job icon" onClick={() => handleSetTanks(player)}/>
-        <img className="healer_icon" src={healer_icon} alt="job icon" onClick={() => handleSetHealers(player)}/>
-        <img className="dps_icon" src={dps_icon} alt="job icon" onClick={() => handleSetDps(player)}/>
-        <button className="assign_button" onClick={() => remove(player)}>Assigned</button> <button className="remove_button" onClick={() => remove(player)}>Remove Player</button>
+      <div className="rosterDisplay" key={index}>
+        <p className="displayName">Name: {player?.name?.Character?.Name} </p>
+        <p className="displayJobs"> Jobs: {findJobs(player)} </p>
+        <img className="tankIcon" src={tank_icon} alt="job icon" onClick={() => handleSetTanks(player)}/>
+        <img className="healerIcon" src={healer_icon} alt="job icon" onClick={() => handleSetHealers(player)}/>
+        <img className="dpsIcon" src={dps_icon} alt="job icon" onClick={() => handleSetDps(player)}/>
+        <button className="assignButton" onClick={() => remove(player)}>Assigned</button> <button className="removeButton" onClick={() => remove(player)}>Remove Player</button>
       </div>
     )
   });
@@ -90,7 +90,7 @@ const Roster = ({myRaidTeam, person, handleSetTanks, tanks, handleSetHealers, he
   let thoseWhoTank = tanks.map((player, index) => {
     return (
       <>
-      <p className="tank_names" key={index}>{player?.name?.Character?.Name}</p>
+      <p className="tankNames" key={index}>{player?.name?.Character?.Name}</p>
       {/* <p>{availableTanks}</p> */}
       </>
     )
@@ -100,7 +100,7 @@ const Roster = ({myRaidTeam, person, handleSetTanks, tanks, handleSetHealers, he
   let thoseWhoHeal = healers.map((player, index) => {
     return (
       <>
-        <p className="healer_names" key={index}>{player?.name?.Character?.Name}</p>
+        <p className="healerNames" key={index}>{player?.name?.Character?.Name}</p>
         {/* <p>{availableHealers}</p> */}
       </>
     )
@@ -110,7 +110,7 @@ const Roster = ({myRaidTeam, person, handleSetTanks, tanks, handleSetHealers, he
   let thoseWhoDPS = dps.map((player, index) => {
     return (
       <>
-        <p className="dps_names" key={index}>{player?.name?.Character?.Name}</p>
+        <p className="dpsNames" key={index}>{player?.name?.Character?.Name}</p>
         {/* <p>{availableDPS}</p> */}
       </>
     )
@@ -139,7 +139,7 @@ const Roster = ({myRaidTeam, person, handleSetTanks, tanks, handleSetHealers, he
       <h2 className="h2">DPS</h2>
       {thoseWhoDPS}
       </div>
-      <button className="wipe_team" onClick={() => clearAll()}>Remove all assignments.</button>
+      <button className="wipeTeam" onClick={() => clearAll()}>Remove all assignments.</button>
       <Footer />
     </section>
     </>

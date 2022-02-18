@@ -10,9 +10,9 @@ let rightLink = "https://img.finalfantasyxiv.com/lds/promo/h/A/eqkthVf5uqxgBzUv6
 const Footer = () => {
     return (
         <footer>
-            <a href={guildSite}><img className="i-foot" src={guildCrest} alt="guild crest" /></a>
+            <a href={guildSite}><img className="iFoot" src={guildCrest} alt="guild crest" /></a>
             <p>Created by: Zebix Rune (Balmung)</p>
-            <a href={freeTrial}><img className="i-foot" src={rightLink} alt="meteor symbol" /></a>
+            <a href={freeTrial}><img className="iFoot" src={rightLink} alt="meteor symbol" /></a>
         </footer>
     )
 }
