@@ -39,8 +39,6 @@ import none from '../images/fate.png'
 //components
 
 //Api Info
-// let url = "https://xivapi.com/freecompany/search?name=Lex+Talionis&sever=Balmung"; //search for our guild ID
-// let guildUrl = "https://xivapi.com/freecompany/9236179148295113228?data=FCM" //display results for guild personnel
 let playerUrl = "https://xivapi.com/character/" //+character ID //returns individual character info
 
 const Player = ({toggle, handleMyRaidTeam, handleSetPerson}) => {

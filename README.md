@@ -8,7 +8,7 @@
 |  F  | Project Worksheet| complete |
 |  M  | Core Layout/structure and functionality | complete |
 |  T  |     MVP     |  complete |
-|  W  |  MVP + Bug fixes | Incomplete |
+|  W  |  MVP + Bug fixes | complete |
 |  R  |  Post MVP   |  Incomplete |
 |  F  |  Presentation | Incomplete | 
 
@@ -128,10 +128,10 @@ Post-MVP:
 |  character info display | H | 1 hour  |      1hr      |
 | info passing and state management | H | 4 hours | 6hrs |
 | Roster display | H   |     1 hour     |      1.5hr      |
-| Reactivity |    H    |     2 hours    |      ?      |
-| Display adjustments | M |  3 hours    |      ?      |
-|    CSS     |   M     |     3 hours    |      ?      |
-|    Total   |         |    18 hrs      |      ?      |
+| Reactivity |    H    |     2 hours    |      2 hours      |
+| Display adjustments | M |  3 hours    |      2 hours      |
+|    CSS     |   M     |     3 hours    |      2 hours      |
+|    Total   |         |    18 hrs      |      18.5 hrs      |
  
 
 ##### PostMVP
@@ -157,14 +157,130 @@ Post-MVP:
 
 ## Additional Libraries
 ---
+[React Embeded Video Player][https://github.com/CookPete/react-player]
+In Terminal:
 ```
+npm install react-player
 ```
+
+In Home.js:
+```js
+import ReactPlayer from 'react-player/youtube'
+
+<ReactPlayer url="" />
+```
+
 
 ## Code Snippet
 ---
+```js
+// displays the players active/most recent active job under their name:
+      let activeJob = player?.Character?.ActiveClassJob?.UnlockedState?.Name;
+      let icon = '';
+      switch(activeJob) {
+        case "Paladin":
+          icon= pld
+          break;
+        case "Warrior":
+          icon= war
+          break;
+        case "Dark Knight":
+          icon= drk
+          break;
+        case "Gunbreaker":
+          icon= gnb
+          break;
+        case "Astrologian":
+          icon= ast
+          break;
+        case "Scholar":
+          icon= sch
+          break;
+        case "White Mage":
+          icon= whm
+          break;
+        case "Sage":
+          icon= sge
+          break;
+        case "Bard":
+          icon= brd
+          break;
+        case "Black Mage":
+          icon= blm
+          break;
+        case "Dancer":
+          icon= dnc
+          break;
+        case "Dragoon":
+          icon= drg
+          break;
+        case "Machinist":
+          icon= mch
+          break;
+        case "Monk":
+          icon= mnk
+          break;
+        case "Ninja":
+          icon= nin
+          break;
+        case "Red Mage":
+          icon= rdm
+          break;
+        case "Samurai":
+          icon= sam
+          break;
+        case "Summoner":
+          icon= smn
+          break;
+        case "Reaper":
+          icon= rpr
+          break;
+        case "Blue Mage":
+          icon= blu
+          break;
+        case "Botanist":
+          icon= btn
+          break;
+        case "Fisher":
+          icon= fsh
+          break;
+        case "Miner":
+          icon= min
+          break;
+        case "Alchemist":
+          icon= alc
+          break;
+        case "Armorer":
+          icon= arm
+          break;
+        case "Blacksmith":
+          icon= bsm
+          break;
+        case "Carpenter":
+          icon= crp
+          break;
+        case "Culinarian":
+          icon= cul
+          break;
+        case "Goldsmith":
+          icon= gsm
+          break;
+        case "Leatherworker":
+          icon= ltw
+          break;
+        case "Weaver":
+          icon= wvr
+          break;
+        default:
+          icon= none
+          break;
+      }
 ```
-```
+
+I am proud of this behemoth of a switch case, it took a while to write and match with all my import statements as well as what was being returned from the API. It's not very complex but it did take a little bit of cycling through to make sure each one would display correctly.
 
 ## Credited code blocks
 ---
 I used the pokedex project to setup the frame for everything for this project, they were very similiar in nature so rather than start from nothing I started from something we did in class.
+
+https://github.com/CookPete/react-player to get the embedded videos to play correctly and have controls on them.
