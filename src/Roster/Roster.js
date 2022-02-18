@@ -11,7 +11,7 @@ import dps_icon from '../images/FFXIVIcons/00_ROLE/DPSRole.png'
 const Roster = ({myRaidTeam, person, handleSetTanks, tanks, handleSetHealers, healers, handleSetDps, dps, clearAll, remove}) => {
   //find level 90 jobs for the filter and display functions
   function displayJobs(person){
-    let arr_len = person.Character.ClassJobs.length
+    let arr_len = person?.Character?.ClassJobs?.length
     let availableJobs = [];
     for(let i = 0; i < arr_len; i++) {
       if (person.Character.ClassJobs[i].Level === 90) {

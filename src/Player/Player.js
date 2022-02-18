@@ -51,7 +51,7 @@ const Player = ({toggle, handleMyRaidTeam, handleSetPerson}) => {
       fetch(playerUrl + `${playerID}`, {mode: 'cors'})
       .then(response => response.json())
       .then(data => setPlayer(data))
-      .catch(() => console.log("oops, it failed"))
+      .catch(() => alert("oops, it failed"))
   }, [toggle]);
 
   // displays the players active/most recent active job under their name:
