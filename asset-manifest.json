@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Role-Assignment/static/css/main.28fbb9db.css",
-    "main.js": "/Role-Assignment/static/js/main.32f73114.js",
+    "main.css": "/Role-Assignment/static/css/main.4ecf7c6c.css",
+    "main.js": "/Role-Assignment/static/js/main.9b582cdd.js",
     "static/js/787.f6b2eaaf.chunk.js": "/Role-Assignment/static/js/787.f6b2eaaf.chunk.js",
     "static/media/Leatherworker.png": "/Role-Assignment/static/media/Leatherworker.e1cefade159004d62703.png",
     "static/media/Samurai.png": "/Role-Assignment/static/media/Samurai.51bb690402fb1a41b1bf.png",
@@ -33,12 +33,12 @@
     "static/media/Miner.png": "/Role-Assignment/static/media/Miner.bd5bd266597815ff71db.png",
     "static/media/WhiteMage.png": "/Role-Assignment/static/media/WhiteMage.c2d2e6e1a7d5e0f9447e.png",
     "index.html": "/Role-Assignment/index.html",
-    "main.28fbb9db.css.map": "/Role-Assignment/static/css/main.28fbb9db.css.map",
-    "main.32f73114.js.map": "/Role-Assignment/static/js/main.32f73114.js.map",
+    "main.4ecf7c6c.css.map": "/Role-Assignment/static/css/main.4ecf7c6c.css.map",
+    "main.9b582cdd.js.map": "/Role-Assignment/static/js/main.9b582cdd.js.map",
     "787.f6b2eaaf.chunk.js.map": "/Role-Assignment/static/js/787.f6b2eaaf.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.28fbb9db.css",
-    "static/js/main.32f73114.js"
+    "static/css/main.4ecf7c6c.css",
+    "static/js/main.9b582cdd.js"
   ]
 }
